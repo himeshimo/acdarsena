@@ -36,12 +36,12 @@ const players = [
   { number: 3, positionGroup: "DF", position: "CB", subPositions: ["CM"], firstName: "Andrea", lastName: "Guidi", displayName: "Andrea Guidi", image: "", age: 34, overall: 74, preferredFoot: "右", wage: "€16,000", nationality: "イタリア", status: "Captain", note: "", role: "The Soul", bio: "Not measured by minutes or ratings. He carries Darsena's history and culture." },
   { number: 4, positionGroup: "DF", position: "LB", subPositions: ["LM", "CM"], firstName: "Alexander", lastName: "Prass", displayName: "Alexander Prass", image: "./players/alexander-prass.webp", age: 26, overall: 78, preferredFoot: "左", wage: "€22,000", nationality: "オーストリア", status: "Squad", note: "", role: "左の前進装置", bio: "LBから中盤までこなす左利きのマルチロール。守備だけでなく、攻撃の出口としても機能する。" },
   { number: 6, positionGroup: "MF", position: "CDM", subPositions: ["CB"], firstName: "Gabriele", lastName: "Monti", displayName: "Gabriele Monti", image: "", age: 30, overall: 70, preferredFoot: "右", wage: "€8,000", nationality: "イタリア", status: "Squad", note: "", role: "守備の締め役", bio: "派手さはないが、試合を閉じるために必要な選手。ベンチに置いておきたい“保険”のような存在。" },
-  { number: 7, positionGroup: "FW", position: "LM", subPositions: ["RM", "LW"], firstName: "Bénie", lastName: "Traoré", displayName: "Bénie Traoré", image: "./players/traore.webp", age: 25, overall: 81, preferredFoot: "右", wage: "€84,000", nationality: "コートジボワール", status: "Key Player", note: "", role: "The Spark", bio: "The main attacking trigger. Breaks lines and creates Openda's route to goal." },
+  { number: 7, positionGroup: "FW", position: "LM", subPositions: ["RM", "LW"], firstName: "Bénie", lastName: "Traoré", displayName: "Bénie Traoré", image: "./players/traore.webp", age: 25, overall: 81, preferredFoot: "右", wage: "€84,000", nationality: "コートジボワール", status: "Squad", note: "", role: "The Spark", bio: "The main attacking trigger. Breaks lines and creates Openda's route to goal." },
   { number: 8, positionGroup: "MF", position: "CM", subPositions: ["CDM"], firstName: "Ismaël", lastName: "Koné", displayName: "Ismaël Koné", image: "./players/ismael-kone.webp", age: 25, overall: 78, preferredFoot: "右", wage: "€21,500", nationality: "カナダ", status: "Squad", note: "", role: "中央の推進力", bio: "Darsenaの中盤に強度と前進力をもたらすCM。守備と攻撃の接続役として重要。" },
   { number: 9, positionGroup: "FW", position: "ST", subPositions: [], firstName: "Loïs", lastName: "Openda", displayName: "Loïs Openda", image: "./players/openda.webp", age: 28, overall: 84, preferredFoot: "右", wage: "€95,000", nationality: "ベルギー", status: "Summer Signing", note: "夏加入", role: "The Finisher", bio: "The new ace who decides games. His finishing pushes Darsena into title pace." },
   { number: 11, positionGroup: "FW", position: "ST", subPositions: [], firstName: "Mërgim", lastName: "Berisha", displayName: "Mërgim Berisha", image: "./players/mergim-berisha.webp", age: 29, overall: 75, preferredFoot: "右", wage: "€22,000", nationality: "ドイツ", status: "Squad", note: "", role: "ボックス内の仕事人", bio: "万能型のストライカー。派手なスピードよりも、ゴール前での判断と収まりで勝負する。" },
   { number: 12, positionGroup: "GK", position: "GK", subPositions: [], firstName: "Sam", lastName: "Karssies", displayName: "Sam Karssies", image: "./players/sam-karssies.webp", age: 25, overall: 63, preferredFoot: "右", wage: "€3,000", nationality: "オランダ", status: "Summer Signing", note: "夏加入", role: "控えGK／準備の男", bio: "夏に加入したバックアップGK。出番は限られるが、長いシーズンを支えるための重要な保険。" },
-  { number: 14, positionGroup: "MF", position: "CDM", subPositions: ["CB"], firstName: "Kylian", lastName: "Kaïboué", displayName: "Kylian Kaïboué", image: "./players/kylian-kaiboue.webp", age: 30, overall: 75, preferredFoot: "左", wage: "€13,000", nationality: "フランス", status: "Squad", note: "", role: "The Structure", bio: "The center of balance and calm. Kaiboue is the structure Darsena stands on." },
+  { number: 14, positionGroup: "MF", position: "CDM", subPositions: ["CB"], firstName: "Kylian", lastName: "Kaïboué", displayName: "Kylian Kaïboué", image: "./players/kylian-kaiboue.webp", age: 30, overall: 75, preferredFoot: "左", wage: "€13,000", nationality: "フランス", status: "Vice Captain", note: "", role: "The Structure", bio: "The center of balance and calm. Kaiboue is the structure Darsena stands on." },
   { number: 15, positionGroup: "DF", position: "LB", subPositions: ["LM"], firstName: "Pedro", lastName: "Silva Torrejón", displayName: "Pedro Silva Torrejón", image: "./players/pedro-silva-torrejon.webp", age: 31, overall: 74, preferredFoot: "左", wage: "€12,500", nationality: "アルゼンチン", status: "Squad", note: "", role: "左足のクロッサー", bio: "左サイドから質のあるボールを供給するベテラン。守備の軽さはあるが、攻撃面では違いを作れる。" },
   { number: 16, positionGroup: "DF", position: "CB", subPositions: [], firstName: "Patric", lastName: "Pfeiffer", displayName: "Patric Pfeiffer", image: "./players/patric-pfeiffer.webp", age: 28, overall: 74, preferredFoot: "右", wage: "€12,000", nationality: "ガーナ", status: "Squad", note: "", role: "制空権担当", bio: "高さとフィジカルで最終ラインを支えるCB。Darsenaの“壊れない守備”に必要な壁。" },
   { number: 20, positionGroup: "FW", position: "RW", subPositions: ["ST", "CAM"], firstName: "Vicente", lastName: "Varela", displayName: "Vicente Varela", image: "", age: 21, overall: 73, preferredFoot: "右", wage: "€7,600", nationality: "スペイン", status: "Prospect", note: "", role: "若き万能アタッカー", bio: "RW、ST、CAMをこなせる21歳。攻撃の複数ポジションで起用できる便利さが魅力。" },
@@ -73,7 +73,7 @@ const headCoach = {
 const filters = ["All", "GK", "DF", "MF", "FW", "Staff"];
 const statusTone = {
   Captain: "bg-darsena-red text-white",
-  "Key Player": "bg-darsena-brass text-darsena-navy",
+  "Vice Captain": "bg-slate-700 text-slate-100",
   "Summer Signing": "bg-red-950 text-red-100 ring-1 ring-red-700/70",
   Academy: "bg-slate-800 text-slate-100",
   "Academy Promotion": "bg-red-950 text-red-100 ring-1 ring-red-700/70",
@@ -236,7 +236,6 @@ function App() {
                 <PlayerCard
                   key={`${player.displayName}-${player.number ?? "loan"}`}
                   player={player}
-                  statusOverride={keyPlayerNames.includes(player.displayName) && player.displayName !== "Loïs Openda" ? "Key Player" : null}
                   onClick={() => openPlayer(player, visiblePlayers)}
                 />
               ))}
@@ -361,7 +360,6 @@ function HomePage({ keyPlayers, onOpenPlayer, onPageChange }) {
               <PlayerCard
                 key={`home-key-${player.displayName}`}
                 player={player}
-                statusOverride={player.displayName !== "Loïs Openda" ? "Key Player" : null}
                 onClick={() => onOpenPlayer(player)}
               />
             ))}
@@ -543,8 +541,8 @@ function InfoCell({ label, value }) {
   );
 }
 
-function PlayerCard({ player, onClick, statusOverride = null, showOriginalStatus = false }) {
-  const visibleStatus = statusOverride ?? getVisibleStatus(player);
+function PlayerCard({ player, onClick, showOriginalStatus = false }) {
+  const visibleStatus = getVisibleStatus(player);
   const originalStatus = showOriginalStatus ? getVisibleStatus(player) : null;
   const nationalityCode = getNationalityCode(player);
   const nameDisplay = getCardNameDisplay(player);
