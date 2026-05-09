@@ -30,7 +30,7 @@ function X({ size, className }) {
   return <Icon size={size} className={className}><path d="M18 6 6 18" /><path d="m6 6 12 12" /></Icon>;
 }
 
-const players = [
+const basePlayers = [
   { number: 1, positionGroup: "GK", position: "GK", subPositions: [], firstName: "Elia", lastName: "Caprile", displayName: "Elia Caprile", image: "./players/caprile.webp", age: 26, overall: 82, preferredFoot: "右", wage: "€21,500", nationality: "イタリア", status: "Squad", note: "", role: "守備文化の基準点", bio: "Darsenaの最後方を支える正GK。派手な主役ではなく、チーム全体に落ち着きと信頼を与える存在。" },
   { number: 2, positionGroup: "DF", position: "CB", subPositions: ["RB", "CDM"], firstName: "Enrico", lastName: "Delprato", displayName: "Enrico Delprato", image: "./players/delprato.webp", age: 28, overall: 78, preferredFoot: "右", wage: "€21,000", nationality: "イタリア", status: "Summer Signing", note: "夏加入", role: "実直な新戦力", bio: "CB、RB、CDMをこなす万能DF。夏加入組らしく、Darsenaの守備構造に厚みを加える。" },
   { number: 3, positionGroup: "DF", position: "CB", subPositions: ["CM"], firstName: "Andrea", lastName: "Guidi", displayName: "Andrea Guidi", image: "", age: 34, overall: 74, preferredFoot: "右", wage: "€16,000", nationality: "イタリア", status: "Captain", note: "", role: "The Soul", bio: "Not measured by minutes or ratings. He carries Darsena's history and culture." },
@@ -59,6 +59,58 @@ const players = [
   { number: null, positionGroup: "MF", position: "CAM", subPositions: [], firstName: "Jan", lastName: "Lehmann", displayName: "Jan Lehmann", image: "", age: 20, overall: 66, preferredFoot: "左", wage: "€450", nationality: "スイス", status: "On Loan", note: "レンタル移籍 / 旧背番号29", role: "育成中の司令塔", bio: "若きCAM。実戦経験を積み、Darsenaに戻る価値を証明するレンタル期間になる。" },
 ];
 
+const playerSheetOverrides = {
+  "Elia Caprile": { height: 191, status: "Vice Captain" },
+  "Enrico Delprato": { height: 183 },
+  "Andrea Guidi": {
+    height: 185,
+    status: "Captain",
+    role: "バンディエラ",
+    bio: "クラブの象徴。衰えはあるが、経験と判断でチームを締める静かなリーダー。",
+  },
+  "Alexander Prass": { height: 180 },
+  "Gabriele Monti": { height: 181 },
+  "Bénie Traoré": {
+    height: 172,
+    role: "サイドの切り札",
+    bio: "左サイドを中心に違いを作るアタッカー。構造の中で自由を与えたとき、最も怖い存在になる。",
+  },
+  "Ismaël Koné": { height: 188, status: "Vice Captain" },
+  "Loïs Openda": {
+    height: 175,
+    role: "新たなエース",
+    bio: "夏に加入したDarsenaの新9番。爆発力と決定力で、チームに“勝ち切る力”を持ち込む。",
+  },
+  "Mërgim Berisha": { height: 188 },
+  "Sam Karssies": { height: 186 },
+  "Kylian Kaïboué": {
+    height: 182,
+    status: "Vice Captain",
+    role: "守備の心臓",
+    bio: "中盤の底で危険を潰す左利きの守備者。ステップアップの噂があっても、今のDarsenaには欠かせない。",
+  },
+  "Pedro Silva Torrejón": { height: 174 },
+  "Patric Pfeiffer": { height: 196 },
+  "Vicente Varela": { height: 173 },
+  "Joshua Quarshie": { height: 196 },
+  "Junnosuke Suzuki": { height: 183 },
+  "Aarón Martín": { height: 178 },
+  "Mateus Mané": { height: 175 },
+  "Nicholas Fiore": { height: 184 },
+  "Massimo Bianchi": { height: 177 },
+  "Jonathan Marechal": { height: 189 },
+  "Tommaso Bianchi": { height: 171 },
+  "Fabrice Billard": { height: 180 },
+  "Shaqueel van Persie": { height: 186 },
+  "Emil Højlund": { height: 192 },
+  "Jan Lehmann": { height: 173 },
+};
+
+const players = basePlayers.map((player) => ({
+  ...player,
+  ...(playerSheetOverrides[player.displayName] ?? {}),
+}));
+
 const headCoach = {
   name: "Alessio De Luca",
   title: "Head Coach",
@@ -73,7 +125,7 @@ const headCoach = {
 const filters = ["All", "GK", "DF", "MF", "FW", "Staff"];
 const statusTone = {
   Captain: "bg-darsena-red text-white",
-  "Vice Captain": "bg-slate-700 text-slate-100",
+  "Vice Captain": "border border-slate-500/40 bg-slate-800/70 text-slate-200",
   "Summer Signing": "bg-red-950 text-red-100 ring-1 ring-red-700/70",
   Academy: "bg-slate-800 text-slate-100",
   "Academy Promotion": "bg-red-950 text-red-100 ring-1 ring-red-700/70",
@@ -103,6 +155,7 @@ const nationalityCodes = {
   "スペイン": "ESP",
   "日本": "JPN",
   "イングランド": "ENG",
+  "ポルトガル": "PRT",
   "デンマーク": "DEN",
   "スイス": "SUI",
 };
@@ -654,7 +707,7 @@ function PlayerModal({ player, canNavigate, onClose, onNext, onPrevious }) {
     ["Age", player.age],
     ["Nationality", player.nationality],
     ["Preferred foot", player.preferredFoot],
-    ["Wage", player.wage],
+    ["Height", player.height ? `${player.height} cm` : "—"],
     visibleStatus ? ["Status", visibleStatus] : null,
     ["Position", [player.position, ...player.subPositions].join(" / ")],
   ].filter(Boolean);
